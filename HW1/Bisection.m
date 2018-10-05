@@ -1,6 +1,8 @@
 format long;
 
-f(x) = 2 + cos(exp(x) - 2) - exp(x);
+syms x;
+
+f = @(x) 2 + cos(exp(x) - 2) - exp(x);
 
 a = 0.05;
 b = 1.5;
@@ -35,4 +37,5 @@ while ((b - c) >= error)
 end
 
 fprintf("\nRoot = %f\n", c);
+clearvars
 

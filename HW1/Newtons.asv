@@ -1,0 +1,30 @@
+syms x;
+
+f = @(x) x^3 - 2*x + 1;
+g = @(x) 3*x^2 - 2;
+
+a0 = 2;
+iteration = 0;
+tolerance = (10^(-6));
+po
+
+fprintf("The function being exaluated: f(x) = %s\n", f(x));
+fprintf("The derivative of f(x): f'(x) = %s\n", g(x));
+fprintf("The allowed error: %f\n", tolerance);
+fprintf("Initial guess: %f\n\n", a0);
+
+
+fprintf("CHART\n");
+while (potRoot > tolerance)
+    iteration = iteration + 1;
+    b = a0 - (f(a0)/g(a0));
+    
+    potRoot = abs((b - a0) / b);
+    
+    fprintf("%d | %f | %f | %f | %f | %f\n", iteration, a0, b, f(a0), g(a0), potRoot);
+    
+    a0=b;
+end
+
+fprintf("The root for tolerance %s is: %f\n", tolerance, a0);
+fprintf("The number of iterations is %d\n", iteration); 
