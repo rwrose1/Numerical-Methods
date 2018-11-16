@@ -1,3 +1,5 @@
+%Bisection
+
 format long;
 
 syms x;
@@ -19,7 +21,7 @@ n = 1;
 
 c = (a + b) / 2;
 
-while ((b - c) >= error)
+while (abs(b - c) >= error)
     
     if ((f(b) * f(c)) <= 0)
         
@@ -38,4 +40,3 @@ end
 
 fprintf("\nRoot = %f\n", c);
 clearvars
-
